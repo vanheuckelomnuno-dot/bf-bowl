@@ -18,32 +18,32 @@ const rise = {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[560px] items-center overflow-hidden sm:min-h-[640px]">
+    <section className="relative flex min-h-[520px] items-center overflow-hidden sm:min-h-[640px]">
       <Image
-        src="/gallery/bowl-shrimp.jpg"
+        src="/gallery/hero-bg.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[50%_30%]"
+        className="object-cover object-center"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-nori/75"
+        className="absolute inset-0 bg-nori/45"
       />
       <motion.div
         variants={stagger}
         initial="hidden"
         animate="show"
-        className="relative mx-auto max-w-3xl px-6 py-20 text-center"
+        className="relative mx-auto max-w-3xl px-6 py-20 text-center [text-shadow:0_1px_16px_rgba(0,0,0,0.45)]"
       >
         <motion.span
           variants={rise}
-          className="mb-4 inline-block rounded-full bg-salmon px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white"
+          className="mb-4 inline-block rounded-full bg-salmon px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white shadow-sm"
         >
           De eerste pokébowl van Kontich
         </motion.span>
-        <motion.p variants={rise} className="mb-4 text-sm font-medium text-rice/80">
+        <motion.p variants={rise} className="mb-4 text-sm font-medium text-rice">
           {restaurant.adres} · 100% halal
         </motion.p>
         <motion.h1
@@ -54,7 +54,7 @@ export function Hero() {
           <br />
           zoals jij het wil.
         </motion.h1>
-        <motion.p variants={rise} className="mx-auto mt-6 max-w-md text-lg text-rice/85">
+        <motion.p variants={rise} className="mx-auto mt-6 max-w-md text-lg text-rice">
           Basis, proteïne, vijf mix-ins, topping en saus. Bel ons, zeg wat je
           wil — en wij bouwen &apos;m voor je op.
         </motion.p>
