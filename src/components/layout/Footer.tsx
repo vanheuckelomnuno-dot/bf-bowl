@@ -16,6 +16,7 @@ export function Footer() {
           <a href={restaurant.mapsUrl} className="hover:text-nori">
             Route
           </a>
+          <span>Gratis parking</span>
           <a href={`tel:${restaurant.telefoon.replace(/\s/g, "")}`} className="hover:text-nori">
             {restaurant.telefoon}
           </a>

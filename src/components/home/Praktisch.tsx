@@ -15,6 +15,7 @@ export function Praktisch() {
           <a href={restaurant.mapsUrl} className="mt-1 inline-block text-sm font-medium text-salmon underline underline-offset-4">
             Route via Google Maps
           </a>
+          <span className="ml-2 text-sm text-nori/50">· Gratis parking</span>
           <p className="mt-4">
             <a href={`tel:${restaurant.telefoon.replace(/\s/g, "")}`} className="text-nori/70 hover:text-nori">
               {restaurant.telefoon}
