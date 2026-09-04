@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,9 +17,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "B&F Bowl · Poké Bowl Kontich",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "B&F Bowl — Pokébowl Kontich | Poké Bowl, Desserts & More",
+    template: `%s · ${siteName}`,
+  },
   description:
-    "Stel je poké bowl samen bij B&F Bowl in Kontich. 100% halal, basis + proteïne + 5 mix-ins + topping + saus, vanaf € 12,50.",
+    "De eerste pokébowlzaak van Kontich. Stel je eigen bowl samen: basis, proteïne, 5 mix-ins, topping en saus, 100% halal. Ook sushi, voorgerechten en desserten. Molenstraat 38, Kontich.",
+  keywords: ["pokébowl Kontich", "poke bowl Kontich", "B&F Bowl", "halal Kontich", "sushi Kontich"],
+  openGraph: {
+    type: "website",
+    locale: "nl_BE",
+    siteName,
+    title: "B&F Bowl — Pokébowl Kontich",
+    description: "De eerste pokébowlzaak van Kontich. Stel je eigen bowl samen, 100% halal.",
+    images: ["/gallery/neon-spread.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "B&F Bowl — Pokébowl Kontich",
+    description: "De eerste pokébowlzaak van Kontich. Stel je eigen bowl samen, 100% halal.",
+    images: ["/gallery/neon-spread.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

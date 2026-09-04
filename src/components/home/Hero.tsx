@@ -34,6 +34,12 @@ export function Hero() {
         className="relative mx-auto grid max-w-6xl gap-12 px-6 pb-20 pt-14 sm:grid-cols-[1.1fr_1fr] sm:items-center sm:pt-20"
       >
         <div>
+          <motion.span
+            variants={rise}
+            className="mb-4 inline-block rounded-full bg-salmon/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-salmon"
+          >
+            De eerste pokébowl van Kontich
+          </motion.span>
           <motion.p variants={rise} className="mb-4 text-sm font-medium text-cucumber">
             {restaurant.adres} · 100% halal
           </motion.p>

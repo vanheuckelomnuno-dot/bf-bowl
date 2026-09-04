@@ -3,6 +3,13 @@ import Image from "next/image";
 import { Phone } from "lucide-react";
 import { restaurant } from "@/data/restaurant";
 
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/menu", label: "Menu" },
+  { href: "/onze-bowls", label: "Onze bowls" },
+  { href: "/#locatie", label: "Locatie" },
+];
+
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-nori/10 bg-rice/95 backdrop-blur">
@@ -12,21 +19,11 @@ export function Navbar() {
           <span className="font-heading text-lg font-semibold text-nori">B&amp;F Bowl</span>
         </Link>
         <div className="hidden items-center gap-8 text-sm font-medium text-nori/80 sm:flex">
-          <Link href="/" className="hover:text-nori">
-            Home
-          </Link>
-          <Link href="/menu" className="hover:text-nori">
-            Menu
-          </Link>
-          <Link href="/#bowls" className="hover:text-nori">
-            Signature bowls
-          </Link>
-          <Link href="/onze-bowls" className="hover:text-nori">
-            Onze bowls
-          </Link>
-          <Link href="/#locatie" className="hover:text-nori">
-            Locatie
-          </Link>
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="hover:text-nori">
+              {link.label}
+            </Link>
+          ))}
         </div>
         <a
           href={`tel:${restaurant.telefoon.replace(/\s/g, "")}`}
@@ -36,6 +33,17 @@ export function Navbar() {
           <span className="hidden sm:inline">Bel ons</span>
         </a>
       </nav>
+      <div className="border-t border-nori/10 sm:hidden">
+        <ul className="flex gap-5 overflow-x-auto px-6 py-2.5 text-sm font-medium text-nori/80">
+          {navLinks.map((link) => (
+            <li key={link.href} className="shrink-0">
+              <Link href={link.href} className="hover:text-nori">
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }
